@@ -1,0 +1,26 @@
+<html>
+<body>
+    <div class="container">
+        <h1>Document to Text Converter</h1>
+        <form id="upload-form">
+            <label for="file-upload" class="custom-file-upload">
+               Select file
+            </label>
+        <input (change)="selectFile($event)" id="file-upload" type="file" />
+
+
+
+            <button (click)="upload()" type="button">Upload</button>
+        </form>
+        
+        
+        <div id="result">
+            <h2 *ngIf="quest==null">Converted Text</h2>
+            <h2  *ngIf="quest!=null">answer</h2>
+
+            <textarea *ngIf="quest==null" id="output-text" rows="10" readonly [value]="text?.text"></textarea>
+            <textarea *ngIf="quest!=null" id="output-text" rows="10" readonly [value]="result?.result"></textarea>
+        </div>
+    </div>
+</body>
+</html>
